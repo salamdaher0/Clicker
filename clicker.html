@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+  var L1R_count = 0;
+  var L1R_timestamp = ""; 
+  var L1L_count = 0;
+  var L1L_timestamp = ""; 
+  var L2R_count = 0;
+  var L2R_timestamp = ""; 
+  var L2L_count = 0;
+  var L2L_timestamp = ""; 
+  var L3R_count = 0;
+  var L3R_timestamp = ""; 
+  var L3L_count = 0;
+  var Y1 = 0;
+  var Y2 = 0;
+   
+   var today, h , m , s ; 
+    
+function startTime()
+{
+today=new Date();
+ h=today.getHours();
+ m=today.getMinutes();
+ s=today.getSeconds();
+// add a zero in front of numbers<10
+m=checkTime(m);
+s=checkTime(s);
+document.getElementById('txt').innerHTML="current time is " + h+":"+m+":"+s;
+t=setTimeout(function(){startTime()},500);
+}
+
+function checkTime(i)
+{
+if (i<10)
+  {
+  i="0" + i;
+  }
+return i;
+}    
+    
+    
+function L1R_Function(e)
+{
+    L1R_count++;
+    L1R_timestamp += h+":"+m+":"+s + " , " ;
+    
+    //startTime();
+    document.getElementById("l1r").innerHTML= "L1R = " + L1R_count + " ______Timestamps = " + L1R_timestamp;
+}
+
+function L1L_Function()
+{
+    L1L_count++;
+    document.getElementById("l1l").innerHTML= "L1L = " + L1L_count;
+}
+
+function L2R_Function()
+{
+    L2R_count++;
+    document.getElementById("l2r").innerHTML= "L2R = " + L2R_count;
+}
+
+function L2L_Function()
+{
+    L2L_count++;
+    document.getElementById("l2l").innerHTML= "L2L = " + L2L_count;
+}
+
+function L3R_Function()
+{
+    L3R_count++;
+    document.getElementById("l3r").innerHTML= "L3R = " + L3R_count;
+}
+
+function L3L_Function()
+{
+    L3L_count++;
+    document.getElementById("l3l").innerHTML= "L3L = " + L3L_count;
+}
+
+function Y1_Function()
+{
+    var light_red = "red light";
+    var light_green = "green light";
+    var light_status;
+   Y1++;
+   if (Y1%2 == 0)
+    light_status = light_red ;
+    else
+    light_status = light_green;
+    document.getElementById("y1").innerHTML= "Y1 = " + light_status;
+}
+
+function Y2_Function()
+{
+    var light_red = "red light";
+    var light_green = "green light";
+    var light_status;
+   Y2++;
+   if (Y2%2 == 0)
+    light_status = light_red ;
+    else
+    light_status = light_green;
+    
+    document.getElementById("y2").innerHTML= "Y2 = " + light_status;
+}
+
+</script>
+</head>
+<body onload="startTime()">
+
+<p>Click the button to trigger a function.</p>
+<div id="txt"></div>
+<button onclick="L1R_Function(event)">L1R</button>
+<button onclick="L1L_Function()">L1L</button>
+<button onclick="L2R_Function()">L2R</button>
+<button onclick="L2L_Function()">L2L</button>
+<button onclick="L3R_Function()">L3R</button>
+<button onclick="L3L_Function()">L3L</button>
+
+<button onclick="Y1_Function()">Y1</button>
+<button onclick="Y2_Function()">Y2</button>
+<button onclick="T1_Function()">Y3</button>
+
+<p id="l1r"></p>
+<p id="l1l"></p>
+<p id="l2r"></p>
+<p id="l2l"></p>
+<p id="l3r"></p>
+<p id="l3l"></p>
+<p id="l1r"></p>
+<p id="y1"></p>
+<p id="y2"></p>
+
+</body>
+</html>
