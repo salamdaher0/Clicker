@@ -2,6 +2,10 @@
 <html>
 <head>
 <script>
+
+    
+
+
   var L1R_count = 0;
   var L1R_timestamp = ""; 
   var L1L_count = 0;
@@ -15,8 +19,12 @@
   var L3L_count = 0;
   var Y1 = 0;
   var Y2 = 0;
-   
-   var today, h , m , s ; 
+  var today, h , m , s ;
+
+  var myIDs = ["L1R", "L1L", "L2R", "L2L", "L3R", "L3L", "Y1", "Y2"];
+  var myCounts = [0, 0, 0, 0, 0, 0, 0, 0];
+  var myTimestamps = ["L1R_timestamp", "L1L_timestamp", "L2R_timestamp", "L2L_timestamp", "L3R_timestamp", "L3L_timestamp", "Y1_timestamp", "Y2_timestamp"];
+  
     
 function startTime()
 {
@@ -40,45 +48,17 @@ if (i<10)
 return i;
 }    
     
-    
-function L1R_Function(e)
+
+
+function cars_Function(e, b)
 {
-    L1R_count++;
-    L1R_timestamp += h+":"+m+":"+s + " , " ;
-    
-    //startTime();
-    document.getElementById("l1r").innerHTML= "L1R = " + L1R_count + " ______Timestamps = " + L1R_timestamp;
+  
+    myCounts[b]++;
+    myTimestamps[b] += h + ":" + m + ":" + s + " , ";
+    var id = "" + myIDs[b];
+    document.getElementById(id).innerHTML = id +" = "+ myCounts[b] + " _________" + myTimestamps[b];
 }
 
-function L1L_Function()
-{
-    L1L_count++;
-    document.getElementById("l1l").innerHTML= "L1L = " + L1L_count;
-}
-
-function L2R_Function()
-{
-    L2R_count++;
-    document.getElementById("l2r").innerHTML= "L2R = " + L2R_count;
-}
-
-function L2L_Function()
-{
-    L2L_count++;
-    document.getElementById("l2l").innerHTML= "L2L = " + L2L_count;
-}
-
-function L3R_Function()
-{
-    L3R_count++;
-    document.getElementById("l3r").innerHTML= "L3R = " + L3R_count;
-}
-
-function L3L_Function()
-{
-    L3L_count++;
-    document.getElementById("l3l").innerHTML= "L3L = " + L3L_count;
-}
 
 function Y1_Function()
 {
@@ -90,7 +70,7 @@ function Y1_Function()
     light_status = light_red ;
     else
     light_status = light_green;
-    document.getElementById("y1").innerHTML= "Y1 = " + light_status;
+    document.getElementById("Y1").innerHTML= "Y1 = " + light_status;
 }
 
 function Y2_Function()
@@ -104,35 +84,42 @@ function Y2_Function()
     else
     light_status = light_green;
     
-    document.getElementById("y2").innerHTML= "Y2 = " + light_status;
+    document.getElementById("Y2").innerHTML= "Y2 = " + light_status;
+}
+
+function reset_Function() {
+    myCounts = [0, 0, 0, 0, 0, 0, 0, 0];
+    myTimestamps = ["", "", "", "", "", "", "", ""];
 }
 
 </script>
 </head>
+
 <body onload="startTime()">
 
 <p>Click the button to trigger a function.</p>
 <div id="txt"></div>
-<button onclick="L1R_Function(event)">L1R</button>
-<button onclick="L1L_Function()">L1L</button>
-<button onclick="L2R_Function()">L2R</button>
-<button onclick="L2L_Function()">L2L</button>
-<button onclick="L3R_Function()">L3R</button>
-<button onclick="L3L_Function()">L3L</button>
+<button onclick="cars_Function(event, 0)">L1R</button>
+<button onclick="cars_Function(event, 1)">L1L</button>
+<button onclick="cars_Function(event, 2)">L2R</button>
+<button onclick="cars_Function(event, 3)">L2L</button>
+<button onclick="cars_Function(event, 4)">L3R</button>
+<button onclick="cars_Function(event, 5)">L3L</button>
 
 <button onclick="Y1_Function()">Y1</button>
 <button onclick="Y2_Function()">Y2</button>
 <button onclick="T1_Function()">Y3</button>
 
-<p id="l1r"></p>
-<p id="l1l"></p>
-<p id="l2r"></p>
-<p id="l2l"></p>
-<p id="l3r"></p>
-<p id="l3l"></p>
-<p id="l1r"></p>
-<p id="y1"></p>
-<p id="y2"></p>
+<button onclick="reset_Function()">CLEAR</button>
+
+<p id="L1R"></p>
+<p id="L1L"></p>
+<p id="L2R"></p>
+<p id="L2L"></p>
+<p id="L3R"></p>
+<p id="L3L"></p>
+<p id="Y1"></p>
+<p id="Y2"></p>
 
 </body>
 </html>
