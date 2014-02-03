@@ -1,0 +1,75 @@
+button{
+	  display: inline-block;
+    width: 100px;
+    height: 100px;
+    padding: 0px;
+    margin: 20px;
+    border: 0px;
+    color: black;
+    background-color: #eeeeee;
+    border: 2px solid #000000;
+  
+    text-align: center;
+    text-decoration: none;
+	}
+button:active {
+		background-color: #aaaaaa;
+		}
+.button_simple{	  
+    background-color: #cccc00;
+ }   	
+.button_clear{	  
+    background-color: #eeeeee;
+    background-image: url(images/clear_100px.jpg);
+    background-repeat:no-repeat;
+ }   
+		
+.button_email{	  
+    background-color: #eeeeee;
+    background-image: url(images/email_100px.jpg);
+    background-repeat:no-repeat;
+ }
+ 
+#btn_10{	  
+    /*background-color: #ff77ff;*/
+    	background-image: url(images/changelaneL2R.jpg);
+    background-repeat:no-repeat;
+   background-position:center; 
+ }
+ 
+#btn_9{	  
+   /* background-color: #ff77ff;*/
+    	background-image: url(images/changelaneR2L.jpg);
+    background-repeat:no-repeat;
+  background-position:center; 
+ }
+ 
+ .button_light{	  
+    background-color: #7777ff;
+    border-radius: 50px;
+ }
+ 
+ .button_mistake{
+ 	  background-image: url(images/mistake100px.jpg);
+    background-repeat:no-repeat;
+  background-position:center; 
+ 	}
+ .RED{
+ 	background-color: #ff0000;
+ 	border-radius: 50px;
+ 	}
+ 	
+ .GREEN{
+ 	background-color: #00ff00;
+ 	border-radius: 50px;
+ 	}
+ 	
+.START{
+ 	background-color: #ffaa00;
+ 
+ 	}
+
+ 	
+ .END{
+ 	background-color: #ffffff;
+ 	}
