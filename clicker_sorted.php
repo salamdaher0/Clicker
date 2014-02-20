@@ -171,7 +171,7 @@ function reset_Function() {
       myTimeStart = [0,0,0,0,0,0,0,0,0,0,0,0,0,0];
       myTimeEnd = [0,0,0,0,0,0,0,0,0,0,0,0,0,0];
       myTimeDelta = [0,0,0,0,0,0,0,0,0,0,0,0,0,0];  
-      mistake = "Mistake Right Before ";
+     mistake = "Mistake Right Before ";
       document.getElementById("mistake").innerHTML = "";
       for (var i=0; i < myIDs.length; i++){
       	document.getElementById(myIDs[i]).innerHTML = "";
@@ -200,23 +200,32 @@ function email_Function() {
 
 <body onload="startTime()">
 <div id="txt"></div>
-<button id= "btn_0" class= "button_simple" onclick="oneClick_Function(event, 0)">L1L2_enter_Q12</button>
+
 <button id= "btn_1" class= "button_simple" onclick="oneClick_Function(event, 1)">L3_enter_Q3</button>
+<button id= "btn_12" class= "button_light" onclick="light_Function(event, 12)">Y1_light</button>
 <button id= "btn_2" class= "button_simple" onclick="oneClick_Function(event, 2)">L3_enter_Q12</button>
-<button id= "btn_3" class= "button_simple" onclick="oneClick_Function(event, 3)">L6_enter_Q4</button>
-<button id= "btn_4" class= "button_simple" onclick="oneClick_Function(event, 4)">L4L5_enter_Q4</button>
-<button id= "btn_5" class= "button_simple" onclick="oneClick_Function(event, 5)">G1_R_sink</button>
-<button id= "btn_6" class= "button_simple" onclick="oneClick_Function(event, 6)">G2_L_sink</button>
-<button id= "btn_7" class= "button_simple" onclick="oneClick_Function(event, 7)">G4_L_sink</button>
-<button id= "btn_8" class= "button_simple" onclick="oneClick_Function(event, 8)">G5_R_sink</button>
+<button id= "btn_0" class= "button_simple" onclick="oneClick_Function(event, 0)">L1L2_enter_Q12</button>
 
 <button id= "btn_10" class= "button_changeL2R" onclick="changeLane_Function(event, 10)">.</button>
 <button id= "btn_9" class= "button_changeR2L" onclick="changeLane_Function(event, 9)">.</button>
 
-
+<button id= "btn_6" class= "button_simple" onclick="oneClick_Function(event, 6)">G2_L_sink</button>
 <button id= "btn_11" class= "button_light" onclick="light_Function(event, 11)">T1_light</button>
-<button id= "btn_12" class= "button_light" onclick="light_Function(event, 12)">Y1_light</button>
+<button id= "btn_5" class= "button_simple" onclick="oneClick_Function(event, 5)">G1_R_sink</button>
+
+
+<button id= "btn_3" class= "button_simple" onclick="oneClick_Function(event, 3)">L6_enter_Q4</button>
+<button id= "btn_4" class= "button_simple" onclick="oneClick_Function(event, 4)">L4L5_enter_Q4</button>
+
+<button id= "btn_7" class= "button_simple" onclick="oneClick_Function(event, 7)">G4_L_sink</button>
 <button id= "btn_13" class= "button_light" onclick="light_Function(event, 13)">T2_light</button>
+<button id= "btn_8" class= "button_simple" onclick="oneClick_Function(event, 8)">G5_R_sink</button>
+
+
+
+
+
+
 
 <button id= "btn_14" class= "button_mistake" onclick="mistake_Function()">.</button>
 <button id= "btn_15" class= "button_clear" onclick="reset_Function()">.</button>
